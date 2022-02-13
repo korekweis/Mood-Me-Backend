@@ -30,6 +30,36 @@ Running backend:
 GET http://localhost:8001/
 ```
 
+#### Fetching all unique buildings
+```http
+GET http://localhost:8001/buildings
+```
+
+#### Fetching all unique streets
+```http
+GET http://localhost:8001/streets
+```
+
+#### Fetching all unique dates for grades
+```http
+GET http://localhost:8001/dates
+```
+
+#### Fetching all unique grades
+```http
+GET http://localhost:8001/grades
+```
+
+#### Fetching all unique scores
+```http
+GET http://localhost:8001/scores
+```
+
+#### Fetching all unique restaurant cuisines
+```http
+GET http://localhost:8001/cuisines
+```
+
 #### Fetching all unique restaurant names
 ```http
 GET http://localhost:8001/names
@@ -38,11 +68,6 @@ GET http://localhost:8001/names
 #### Fetching all unique restaurant ids
 ```http
 GET http://localhost:8001/ids
-```
-
-#### Fetching all unique restaurant cuisines
-```http
-GET http://localhost:8001/cuisines
 ```
 
 #### Number of Data to be displayed
@@ -653,7 +678,7 @@ GET http://localhost:8001/api?name=Wendy'S
 #### Fetching raw data searched by restaurant_id
 ```http
 GET http://localhost:8001/api?restaurant_id={restaurant_id}
-GET http://localhost:8001/api?restaurant_id=30112340
+GET http://localhost:8001/api?restaurant_id=40362274
 ```
 <details>
   <summary><i>Example Response</i></summary>
@@ -662,39 +687,39 @@ GET http://localhost:8001/api?restaurant_id=30112340
 {
   "data": {
         "address": {
-            "building": "469",
-            "street": "Flatbush Avenue"
+            "building": "18",
+            "street": "West Houston Street"
         },
-        "_id": "5eb3d668b31de5d588f4292d",
-        "cuisine": "Hamburgers",
+        "_id": "5eb3d668b31de5d588f42943",
+        "cuisine": "American",
         "grades": [
             {
-                "_id": "620897c01ce282c6e00a3d9f",
-                "date": "2014-12-30T00:00:00.000Z",
+                "_id": "62089871c9effd8f8a070950",
+                "date": "2014-04-03T00:00:00.000Z",
                 "grade": "A",
-                "score": 8
+                "score": 9
             },
             {
-                "_id": "620897c01ce282c6e00a3da0",
-                "date": "2014-07-01T00:00:00.000Z",
-                "grade": "B",
-                "score": 23
+                "_id": "62089871c9effd8f8a070951",
+                "date": "2013-04-05T00:00:00.000Z",
+                "grade": "A",
+                "score": 4
             },
             {
-                "_id": "620897c01ce282c6e00a3da1",
-                "date": "2013-04-30T00:00:00.000Z",
+                "_id": "62089871c9effd8f8a070952",
+                "date": "2012-03-21T00:00:00.000Z",
                 "grade": "A",
-                "score": 12
+                "score": 13
             },
             {
-                "_id": "620897c01ce282c6e00a3da2",
-                "date": "2012-05-08T00:00:00.000Z",
+                "_id": "62089871c9effd8f8a070953",
+                "date": "2011-04-27T00:00:00.000Z",
                 "grade": "A",
-                "score": 12
+                "score": 5
             }
         ],
-        "name": "Wendy'S",
-        "restaurant_id": "30112340"
+        "name": "Angelika Film Center",
+        "restaurant_id": "40362274"
     }
 }
 ```
@@ -703,7 +728,7 @@ GET http://localhost:8001/api?restaurant_id=30112340
 <br>
 
 
-#### SAMPLE
+<!-- #### SAMPLE
 ```http
 GET http://localhost:8001/api?pagination={pagination}
 GET http://localhost:8001/api?pagination=2
@@ -725,4 +750,4 @@ GET http://localhost:8001/api?pagination=2
 ```
 
 </details>
-<br>
+<br> -->

@@ -46,6 +46,7 @@ app.get("/", (req, res) => {
 
 app.get("/api", (req, res) => {
     var filters = req.query;
+    // console.log(`filters date: ${filters["date"]}`);
 
     // SORT
     var sort = req.query.sort;
@@ -125,6 +126,36 @@ app.get("/api", (req, res) => {
     .limit(pagination)
     .sort(sort)
 });
+
+app.get("/buildings", (req, res) => { 
+    Restaurants.distinct("address.building", (err, data) => { 
+        res.status(200).send(data);
+    })
+})
+
+app.get("/streets", (req, res) => { 
+    Restaurants.distinct("address.street", (err, data) => { 
+        res.status(200).send(data);
+    })
+})
+
+app.get("/dates", (req, res) => { 
+    Restaurants.distinct("grades.date", (err, data) => { 
+        res.status(200).send(data);
+    })
+})
+
+app.get("/grades", (req, res) => { 
+    Restaurants.distinct("grades.grade", (err, data) => { 
+        res.status(200).send(data);
+    })
+})
+
+app.get("/scores", (req, res) => { 
+    Restaurants.distinct("grades.score", (err, data) => { 
+        res.status(200).send(data);
+    })
+})
 
 app.get("/cuisines", (req, res) => { 
     Restaurants.distinct("cuisine", (err, data) => { 
