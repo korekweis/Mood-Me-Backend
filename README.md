@@ -312,6 +312,7 @@ GET http://localhost:8001/api?building=1007
     }
 }
 ```
+</details>
 
 #### Fetching raw data by Street
 ```http
@@ -415,6 +416,173 @@ GET http://localhost:8001/api?cuisine=Asian
         ],
         "name": "China Grill",
         "restaurant_id": "40386481"
+    }
+}
+```
+
+</details>
+
+#### Fetching raw data by Date
+Returns data that has a grade posted before or equal to `YYYY-MM-DD`
+```http
+GET http://localhost:8001/api?date={date}
+GET http://localhost:8001/api?date=2015-01-05
+```
+<details>
+  <summary><i>Example Response</i></summary>
+
+```JSON
+{
+  "data": {
+        "address": {
+            "building": "203",
+            "street": "Giffords Lane"
+        },
+        "_id": "5eb3d668b31de5d588f4295d",
+        "cuisine": "Delicatessen",
+        "grades": [
+            {
+                "_id": "620894ed1ce282c6e00a3d0a",
+                "date": "2015-01-05T00:00:00.000Z",
+                "grade": "A",
+                "score": 4
+            },
+            {
+                "_id": "620894ed1ce282c6e00a3d0b",
+                "date": "2014-09-11T00:00:00.000Z",
+                "grade": "C",
+                "score": 39
+            },
+            {
+                "_id": "620894ed1ce282c6e00a3d0c",
+                "date": "2014-03-20T00:00:00.000Z",
+                "grade": "A",
+                "score": 12
+            },
+            {
+                "_id": "620894ed1ce282c6e00a3d0d",
+                "date": "2013-01-24T00:00:00.000Z",
+                "grade": "A",
+                "score": 13
+            },
+            {
+                "_id": "620894ed1ce282c6e00a3d0e",
+                "date": "2012-05-23T00:00:00.000Z",
+                "grade": "A",
+                "score": 10
+            }
+        ],
+        "name": "B & M Hot Bagel & Grocery",
+        "restaurant_id": "40364299"
+    }
+}
+```
+</details>
+
+#### Fetching raw data by Grade 
+Returns data that has a grade equal to `grade`
+```http
+GET http://localhost:8001/api?grade={grade}
+GET http://localhost:8001/api?grade=C
+```
+<details>
+  <summary><i>Example Response</i></summary>
+
+```JSON
+{
+  "data": {
+        "address": {
+            "building": "0",
+            "street": "Guardia Airport Parking"
+        },
+        "_id": "5eb3d668b31de5d588f4295a",
+        "cuisine": "American",
+        "grades": [
+            {
+                "_id": "620893e8b748ad566dd27489",
+                "date": "2014-05-16T00:00:00.000Z",
+                "grade": "A",
+                "score": 9
+            },
+            {
+                "_id": "620893e8b748ad566dd2748a",
+                "date": "2013-05-10T00:00:00.000Z",
+                "grade": "A",
+                "score": 10
+            },
+            {
+                "_id": "620893e8b748ad566dd2748b",
+                "date": "2012-05-15T00:00:00.000Z",
+                "grade": "A",
+                "score": 9
+            },
+            {
+                "_id": "620893e8b748ad566dd2748c",
+                "date": "2011-11-02T00:00:00.000Z",
+                "grade": "C",
+                "score": 32
+            }
+        ],
+        "name": "Terminal Cafe/Yankee Clipper",
+        "restaurant_id": "40364262"
+    }
+}
+```
+
+</details>
+
+#### Fetching raw data by Score
+Returns data that has a score equal to `score`
+```http
+GET http://localhost:8001/api?score={score}
+GET http://localhost:8001/api?score=14
+```
+<details>
+  <summary><i>Example Response</i></summary>
+
+```JSON
+{
+  "data": {
+        "address": {
+            "building": "405",
+            "street": "East   52 Street"
+        },
+        "_id": "5eb3d668b31de5d588f42994",
+        "cuisine": "French",
+        "grades": [
+            {
+                "_id": "620896191ce282c6e00a3d40",
+                "date": "2014-07-14T00:00:00.000Z",
+                "grade": "B",
+                "score": 14
+            },
+            {
+                "_id": "620896191ce282c6e00a3d41",
+                "date": "2013-12-02T00:00:00.000Z",
+                "grade": "A",
+                "score": 12
+            },
+            {
+                "_id": "620896191ce282c6e00a3d42",
+                "date": "2013-04-08T00:00:00.000Z",
+                "grade": "B",
+                "score": 22
+            },
+            {
+                "_id": "620896191ce282c6e00a3d43",
+                "date": "2012-09-17T00:00:00.000Z",
+                "grade": "A",
+                "score": 12
+            },
+            {
+                "_id": "620896191ce282c6e00a3d44",
+                "date": "2012-04-03T00:00:00.000Z",
+                "grade": "A",
+                "score": 12
+            }
+        ],
+        "name": "Le Perigord",
+        "restaurant_id": "40365414"
     }
 }
 ```

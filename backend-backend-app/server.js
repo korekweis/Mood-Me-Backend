@@ -97,7 +97,8 @@ app.get("/api", (req, res) => {
     var date = req.query.date;
     if (date) { 
         date = new Date(date);
-        filters["grades.date"] = {$gte: date}
+        filters["grades.date"] = date
+        // {$lte: date}
         delete filters["date"];
     }
 
