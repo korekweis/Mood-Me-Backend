@@ -530,6 +530,7 @@ GET http://localhost:8001/api?grade=C
 ```
 
 </details>
+<hr>
 
 #### Fetching raw data by Score
 Returns data that has a score equal to `score`
