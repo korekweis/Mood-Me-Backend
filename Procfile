@@ -1,0 +1,1 @@
+web: cd backend-backend-app && npm start
