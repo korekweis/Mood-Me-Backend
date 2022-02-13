@@ -1,6 +1,4 @@
 import mongoose from 'mongoose';
-import Int32 from "mongoose-int32";
-// const Int32 = require("mongoose-int32").loadType(mongoose);
 
 const restaurantSchema = mongoose.Schema({ 
     address: { 
