@@ -133,6 +133,7 @@ GET http://localhost:8001/api?pagination=2
 ```
 
 </details>
+<br>
 
 #### Page Number of Data
 This holds the page number. If the <i>pagination</i> is 3 and <i>page</i> is 3. This will display results 7 to 9. 
@@ -257,6 +258,7 @@ GET http://localhost:8001/api?pagination=3&page=3
 ```
 
 </details>
+<br>
 
 #### Fetching raw data by Building
 ```http
@@ -313,6 +315,7 @@ GET http://localhost:8001/api?building=1007
 }
 ```
 </details>
+<br>
 
 #### Fetching raw data by Street
 ```http
@@ -364,6 +367,7 @@ GET http://localhost:8001/api?street=11 Avenue
 ```
 
 </details>
+<br>
 
 #### Fetching raw data by Cuisine
 ```http
@@ -421,6 +425,7 @@ GET http://localhost:8001/api?cuisine=Asian
 ```
 
 </details>
+<br>
 
 #### Fetching raw data by Date
 Returns data that has a grade posted before or equal to `YYYY-MM-DD`
@@ -478,6 +483,7 @@ GET http://localhost:8001/api?date=2015-01-05
 }
 ```
 </details>
+<br>
 
 #### Fetching raw data by Grade 
 Returns data that has a grade equal to `grade`
@@ -530,7 +536,7 @@ GET http://localhost:8001/api?grade=C
 ```
 
 </details>
-<hr>
+<br>
 
 #### Fetching raw data by Score
 Returns data that has a score equal to `score`
@@ -589,10 +595,112 @@ GET http://localhost:8001/api?score=14
 ```
 
 </details>
+<br>
 
+#### Fetching raw data by Name
+Returns data that has a name equal to `name`
+```http
+GET http://localhost:8001/api?name={name}
+GET http://localhost:8001/api?name=Wendy'S
+```
+<details>
+  <summary><i>Example Response</i></summary>
 
+```JSON
+{
+  "data": {
+        "address": {
+            "building": "138-41",
+            "street": "Jamaica Avenue"
+        },
+        "_id": "5eb3d668b31de5d588f43086",
+        "cuisine": "Hamburgers",
+        "grades": [
+            {
+                "_id": "620897111ce282c6e00a3d82",
+                "date": "2014-04-07T00:00:00.000Z",
+                "grade": "A",
+                "score": 12
+            },
+            {
+                "_id": "620897111ce282c6e00a3d83",
+                "date": "2013-04-11T00:00:00.000Z",
+                "grade": "A",
+                "score": 13
+            },
+            {
+                "_id": "620897111ce282c6e00a3d84",
+                "date": "2012-04-02T00:00:00.000Z",
+                "grade": "A",
+                "score": 9
+            },
+            {
+                "_id": "620897111ce282c6e00a3d85",
+                "date": "2011-04-21T00:00:00.000Z",
+                "grade": "A",
+                "score": 7
+            }
+        ],
+        "name": "Wendy'S",
+        "restaurant_id": "40568945"
+    }
+}
+```
 
+</details>
+<br>
 
+#### Fetching raw data searched by restaurant_id
+```http
+GET http://localhost:8001/api?restaurant_id={restaurant_id}
+GET http://localhost:8001/api?restaurant_id=30112340
+```
+<details>
+  <summary><i>Example Response</i></summary>
+
+```JSON
+{
+  "data": {
+        "address": {
+            "building": "469",
+            "street": "Flatbush Avenue"
+        },
+        "_id": "5eb3d668b31de5d588f4292d",
+        "cuisine": "Hamburgers",
+        "grades": [
+            {
+                "_id": "620897c01ce282c6e00a3d9f",
+                "date": "2014-12-30T00:00:00.000Z",
+                "grade": "A",
+                "score": 8
+            },
+            {
+                "_id": "620897c01ce282c6e00a3da0",
+                "date": "2014-07-01T00:00:00.000Z",
+                "grade": "B",
+                "score": 23
+            },
+            {
+                "_id": "620897c01ce282c6e00a3da1",
+                "date": "2013-04-30T00:00:00.000Z",
+                "grade": "A",
+                "score": 12
+            },
+            {
+                "_id": "620897c01ce282c6e00a3da2",
+                "date": "2012-05-08T00:00:00.000Z",
+                "grade": "A",
+                "score": 12
+            }
+        ],
+        "name": "Wendy'S",
+        "restaurant_id": "30112340"
+    }
+}
+```
+
+</details>
+<br>
 
 
 #### SAMPLE
@@ -617,4 +725,4 @@ GET http://localhost:8001/api?pagination=2
 ```
 
 </details>
-
+<br>
