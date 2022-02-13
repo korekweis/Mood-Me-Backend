@@ -24,6 +24,12 @@ Running backend:
 `npx nodemon runserver` 
 
 ## Case Information 
+
+#### Fetching all the data in the database 
+```http 
+GET http://localhost:8001/
+```
+
 #### Fetching all unique restaurant names
 ```http
 GET http://localhost:8001/names
@@ -39,7 +45,8 @@ GET http://localhost:8001/ids
 GET http://localhost:8001/cuisines
 ```
 
-#### Number of data to be displayed
+#### Number of Data to be displayed
+This holds the parameter of the number of data to be displayed
 ```http
 GET http://localhost:8001/api?pagination={pagination}
 GET http://localhost:8001/api?pagination=2
@@ -50,6 +57,7 @@ GET http://localhost:8001/api?pagination=2
 
 ```JSON
 {
+    "data": [{
         "address": {
             "building": "97-22",
             "street": "63 Road"
@@ -120,12 +128,305 @@ GET http://localhost:8001/api?pagination=2
         ],
         "name": "Wendy'S",
         "restaurant_id": "30112340"
-    }
+    }]
+}
 ```
 
 </details>
 
-#### Number of data to be displayed
+#### Page Number of Data
+This holds the page number. If the <i>pagination</i> is 3 and <i>page</i> is 3. This will display results 7 to 9. 
+```http
+GET http://localhost:8001/api?page={page}
+GET http://localhost:8001/api?pagination=3&page=3
+```
+<details>
+  <summary><i>Example Response</i></summary>
+
+```JSON
+{
+    "data": [{
+        "address": {
+            "building": "1839",
+            "street": "Nostrand Avenue"
+        },
+        "_id": "5eb3d668b31de5d588f42932",
+        "cuisine": "Ice Cream, Gelato, Yogurt, Ices",
+        "grades": [
+            {
+                "_id": "62088f5ceebf85aed2b973a2",
+                "date": "2014-07-14T00:00:00.000Z",
+                "grade": "A",
+                "score": 12
+            },
+            {
+                "_id": "62088f5ceebf85aed2b973a3",
+                "date": "2013-07-10T00:00:00.000Z",
+                "grade": "A",
+                "score": 8
+            },
+            {
+                "_id": "62088f5ceebf85aed2b973a4",
+                "date": "2012-07-11T00:00:00.000Z",
+                "grade": "A",
+                "score": 5
+            },
+            {
+                "_id": "62088f5ceebf85aed2b973a5",
+                "date": "2012-02-23T00:00:00.000Z",
+                "grade": "A",
+                "score": 8
+            }
+        ],
+        "name": "Taste The Tropics Ice Cream",
+        "restaurant_id": "40356731"
+    },
+    {
+        "address": {
+            "building": "7715",
+            "street": "18 Avenue"
+        },
+        "_id": "5eb3d668b31de5d588f42934",
+        "cuisine": "American",
+        "grades": [
+            {
+                "_id": "62088f5ceebf85aed2b973a6",
+                "date": "2014-04-16T00:00:00.000Z",
+                "grade": "A",
+                "score": 5
+            },
+            {
+                "_id": "62088f5ceebf85aed2b973a7",
+                "date": "2013-04-23T00:00:00.000Z",
+                "grade": "A",
+                "score": 2
+            },
+            {
+                "_id": "62088f5ceebf85aed2b973a8",
+                "date": "2012-04-24T00:00:00.000Z",
+                "grade": "A",
+                "score": 5
+            },
+            {
+                "_id": "62088f5ceebf85aed2b973a9",
+                "date": "2011-12-16T00:00:00.000Z",
+                "grade": "A",
+                "score": 2
+            }
+        ],
+        "name": "C & C Catering Service",
+        "restaurant_id": "40357437"
+    },
+    {
+        "address": {
+            "building": "1",
+            "street": "East   66 Street"
+        },
+        "_id": "5eb3d668b31de5d588f42937",
+        "cuisine": "American",
+        "grades": [
+            {
+                "_id": "62088f5ceebf85aed2b973aa",
+                "date": "2014-05-07T00:00:00.000Z",
+                "grade": "A",
+                "score": 3
+            },
+            {
+                "_id": "62088f5ceebf85aed2b973ab",
+                "date": "2013-05-03T00:00:00.000Z",
+                "grade": "A",
+                "score": 4
+            },
+            {
+                "_id": "62088f5ceebf85aed2b973ac",
+                "date": "2012-04-30T00:00:00.000Z",
+                "grade": "A",
+                "score": 6
+            },
+            {
+                "_id": "62088f5ceebf85aed2b973ad",
+                "date": "2011-12-27T00:00:00.000Z",
+                "grade": "A",
+                "score": 0
+            }
+        ],
+        "name": "1 East 66Th Street Kitchen",
+        "restaurant_id": "40359480"
+    }]
+}
+```
+
+</details>
+
+#### Fetching raw data by Building
+```http
+GET http://localhost:8001/api?building={building}
+GET http://localhost:8001/api?building=1007
+```
+<details>
+  <summary><i>Example Response</i></summary>
+
+```JSON
+{
+    "data": {
+        "address": {
+            "building": "1007",
+            "street": "Morris Park Ave"
+        },
+        "_id": "5eb3d668b31de5d588f4292e",
+        "cuisine": "Bakery",
+        "grades": [
+            {
+                "_id": "620890cceebf85aed2b973b9",
+                "date": "2014-03-03T00:00:00.000Z",
+                "grade": "A",
+                "score": 2
+            },
+            {
+                "_id": "620890cceebf85aed2b973ba",
+                "date": "2013-09-11T00:00:00.000Z",
+                "grade": "A",
+                "score": 6
+            },
+            {
+                "_id": "620890cceebf85aed2b973bb",
+                "date": "2013-01-24T00:00:00.000Z",
+                "grade": "A",
+                "score": 10
+            },
+            {
+                "_id": "620890cceebf85aed2b973bc",
+                "date": "2011-11-23T00:00:00.000Z",
+                "grade": "A",
+                "score": 9
+            },
+            {
+                "_id": "620890cceebf85aed2b973bd",
+                "date": "2011-03-10T00:00:00.000Z",
+                "grade": "B",
+                "score": 14
+            }
+        ],
+        "name": "Morris Park Bake Shop",
+        "restaurant_id": "30075445"
+    }
+}
+```
+
+#### Fetching raw data by Street
+```http
+GET http://localhost:8001/api?street={street}
+GET http://localhost:8001/api?street=11 Avenue
+```
+<details>
+  <summary><i>Example Response</i></summary>
+
+```JSON
+{
+    "data": {
+        "address": {
+            "building": "6522",
+            "street": "11 Avenue"
+        },
+        "_id": "5eb3d668b31de5d588f4327e",
+        "cuisine": "Italian",
+        "grades": [
+            {
+                "_id": "6208917aeebf85aed2b973dc",
+                "date": "2014-04-04T00:00:00.000Z",
+                "grade": "A",
+                "score": 7
+            },
+            {
+                "_id": "6208917aeebf85aed2b973dd",
+                "date": "2013-03-26T00:00:00.000Z",
+                "grade": "A",
+                "score": 9
+            },
+            {
+                "_id": "6208917aeebf85aed2b973de",
+                "date": "2012-10-19T00:00:00.000Z",
+                "grade": "A",
+                "score": 4
+            },
+            {
+                "_id": "6208917aeebf85aed2b973df",
+                "date": "2012-03-27T00:00:00.000Z",
+                "grade": "A",
+                "score": 11
+            }
+        ],
+        "name": "La Sorrentina Ristorante",
+        "restaurant_id": "40650407"
+    }
+}
+```
+
+</details>
+
+#### Fetching raw data by Cuisine
+```http
+GET http://localhost:8001/api?cuisine={cuisine}
+GET http://localhost:8001/api?cuisine=Asian
+```
+<details>
+  <summary><i>Example Response</i></summary>
+
+```JSON
+{
+  "data": {
+        "address": {
+            "building": "51",
+            "street": "West 52 Street"
+        },
+        "_id": "5eb3d668b31de5d588f42b9f",
+        "cuisine": "Asian",
+        "grades": [
+            {
+                "_id": "6208920ceebf85aed2b973ff",
+                "date": "2014-08-12T00:00:00.000Z",
+                "grade": "A",
+                "score": 11
+            },
+            {
+                "_id": "6208920ceebf85aed2b97400",
+                "date": "2013-08-27T00:00:00.000Z",
+                "grade": "A",
+                "score": 9
+            },
+            {
+                "_id": "6208920ceebf85aed2b97401",
+                "date": "2013-04-03T00:00:00.000Z",
+                "grade": "B",
+                "score": 18
+            },
+            {
+                "_id": "6208920ceebf85aed2b97402",
+                "date": "2012-09-20T00:00:00.000Z",
+                "grade": "A",
+                "score": 12
+            },
+            {
+                "_id": "6208920ceebf85aed2b97403",
+                "date": "2011-08-17T00:00:00.000Z",
+                "grade": "A",
+                "score": 2
+            }
+        ],
+        "name": "China Grill",
+        "restaurant_id": "40386481"
+    }
+}
+```
+
+</details>
+
+
+
+
+
+
+#### SAMPLE
 ```http
 GET http://localhost:8001/api?pagination={pagination}
 GET http://localhost:8001/api?pagination=2
