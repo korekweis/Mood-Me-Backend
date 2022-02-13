@@ -23,7 +23,7 @@ install nodemon:
 Running backend:
 `npx nodemon runserver` 
 
-## Case Information 
+## Restaurant Search API Information 
 
 #### Fetching all the data in the database 
 ```http 
