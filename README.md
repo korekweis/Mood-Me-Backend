@@ -14,16 +14,13 @@ Version control:
 `git init`
 `npm init`
 
-Running backend:
-`npx nodemon runserver` 
-
 Install mongoose: 
 `npm i express mongoose`
 
 install nodemon: 
 `sudo npm i -g nodemon`
 
+Running backend:
+`npx nodemon runserver` 
+
 parameters to search: 
-`page` - limit 
-`cuisine`
-`pagination` - number of results per page 

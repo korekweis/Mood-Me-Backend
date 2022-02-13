@@ -46,6 +46,14 @@ app.get("/", (req, res) => {
 
 app.get("/api", (req, res) => {
     var filters = req.query;
+    console.log("printing query: ");
+    console.log(filters);
+
+    // SORT
+    var sort = req.query.sort;
+    if (sort) { 
+        delete filters["sort"];
+    }
 
     // PAGINATION 
     var pagination = req.query.pagination;
@@ -87,6 +95,15 @@ app.get("/api", (req, res) => {
     }
     // console.log(`filters: ${filters}`);
 
+    // DATE 
+    var date = req.query.date;
+    if (date) { 
+        date = new Date(date);
+        console.log(date);
+        filters["grades.date"] = {$gte: date}
+        delete filters["date"];
+    }
+
     //GRADE
     var grade = req.query.grade;
     if (grade) { 
@@ -101,6 +118,7 @@ app.get("/api", (req, res) => {
         filters["grades.score"] = parseInt(score);
         delete filters["score"];
     }
+
     console.log("filters")
     console.log(`filters: ${filters}`);
 
@@ -109,6 +127,7 @@ app.get("/api", (req, res) => {
     })
     .skip((page-1) * pagination)
     .limit(pagination)
+    .sort(sort)
 });
 
 app.get("/cuisine", (req, res) => { 
