@@ -46,8 +46,6 @@ app.get("/", (req, res) => {
 
 app.get("/api", (req, res) => {
     var filters = req.query;
-    console.log("printing query: ");
-    console.log(filters);
 
     // SORT
     var sort = req.query.sort;
@@ -99,7 +97,6 @@ app.get("/api", (req, res) => {
     var date = req.query.date;
     if (date) { 
         date = new Date(date);
-        console.log(date);
         filters["grades.date"] = {$gte: date}
         delete filters["date"];
     }
@@ -119,8 +116,6 @@ app.get("/api", (req, res) => {
         delete filters["score"];
     }
 
-    console.log("filters")
-    console.log(`filters: ${filters}`);
 
     Restaurants.find(filters, (err, data) => { 
         res.status(200).send(data)
@@ -130,19 +125,19 @@ app.get("/api", (req, res) => {
     .sort(sort)
 });
 
-app.get("/cuisine", (req, res) => { 
+app.get("/cuisines", (req, res) => { 
     Restaurants.distinct("cuisine", (err, data) => { 
         res.status(200).send(data);
     })
 })
 
-app.get("/name", (req, res) => { 
+app.get("/names", (req, res) => { 
     Restaurants.distinct("name", (err, data) => { 
         res.status(200).send(data);
     })
 })
 
-app.get("/id", (req, res) => { 
+app.get("/ids", (req, res) => { 
     Restaurants.distinct("restaurant_id", (err, data) => { 
         res.status(200).send(data);
     })
