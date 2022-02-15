@@ -759,23 +759,42 @@ GET https://mood-me-backend.herokuapp.com/api?restaurant_id=40362274
 
 #### Specifying the number of data to be displayed 
 ##### Displaying the first 15 restaurants in the database
+
 ![11th to 15th](/Images/11to15.png "11th to 15th")
 
 #### Specifying the building name
-Displaying restaurants in building 100
+##### Displaying restaurants in building 100
+
 ![Building Input](/Images/buildingInput.png "Building Input")
+
 ![Building Output](/Images/buildingOutput.png "Building Output")
 
-#### Specifying the page number 
+#### Specifying the street name
+##### Displaying restaurants in street <i>37 Road</i>
+![Street Input](/Images/roadInput.png "Street Input")
+![Street Output](/Images/roadOutput.png "Street Output")
+
+#### Specifying the building name
+##### Displaying restaurants in building 100
 Displaying 11th to 15th restaurants 
 ![First Fifteen](/Images/.png "First Fifteen")#### Specifying the page number 
+
+#### Specifying the building name
+##### Displaying restaurants in building 100
 Displaying 11th to 15th restaurants 
 ![First Fifteen](/Images/.png "First Fifteen")#### Specifying the page number 
+
+#### Specifying the building name
+##### Displaying restaurants in building 100
 Displaying 11th to 15th restaurants 
 ![First Fifteen](/Images/.png "First Fifteen")#### Specifying the page number 
+
+#### Specifying the building name
+##### Displaying restaurants in building 100
 Displaying 11th to 15th restaurants 
 ![First Fifteen](/Images/.png "First Fifteen")#### Specifying the page number 
-Displaying 11th to 15th restaurants 
-![First Fifteen](/Images/.png "First Fifteen")#### Specifying the page number 
+
+#### Specifying the building name
+##### Displaying restaurants in building 100
 Displaying 11th to 15th restaurants 
 ![First Fifteen](/Images/.png "First Fifteen")
