@@ -747,10 +747,14 @@ GET https://mood-me-backend.herokuapp.com/api?restaurant_id=40362274
 ## FrontEnd Search Examples 
 
 #### No Input 
-When there are no inputs, and searched is clicked, first 10 data in the database will be displayed
+##### When there are no inputs, and searched is clicked, first 10 data in the database will be displayed
+
 ![No Input](/Images/noInput.png "Sample No Input")
+
 ![First Ten](/Images/firstTen.png "First Ten Outputs")
-If an entry is clicked (Tov Kosher Kitchen), information about that entry is displayed
+
+##### If an entry is clicked (Tov Kosher Kitchen), information about that entry is displayed
+
 ![Tov Kosher](/Images/TovKosher.png "Tov Kosher Information")
 
 #### Specifying the number of data to be displayed 
