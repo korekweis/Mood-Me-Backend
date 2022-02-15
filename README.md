@@ -758,7 +758,7 @@ GET https://mood-me-backend.herokuapp.com/api?restaurant_id=40362274
 ![Tov Kosher](/Images/TovKosher.png "Tov Kosher Information")
 
 #### Specifying the number of data to be displayed 
-Displaying the first 15 restaurants in the database
+##### Displaying the first 15 restaurants in the database
 ![11th to 15th](/Images/11to15.png "11th to 15th")
 
 #### Specifying the building name
