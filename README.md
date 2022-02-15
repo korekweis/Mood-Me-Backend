@@ -772,6 +772,7 @@ GET https://mood-me-backend.herokuapp.com/api?restaurant_id=40362274
 #### Specifying the street name
 ##### Displaying restaurants in street <i>37 Road</i>
 ![Street Input](/Images/roadInput.png "Street Input")
+<br></br>
 ![Street Output](/Images/roadOutput.png "Street Output")
 
 #### Specifying the building name
