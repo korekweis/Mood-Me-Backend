@@ -820,7 +820,8 @@ GET https://mood-me-backend.herokuapp.com/api?restaurant_id=40362274
 ##### Displaying restaurants with the name <i>Hong Kong Kitchen</i>
 ![Name](/Images/name.png "Name")
 
-#### Specifying the building name
-##### Displaying restaurants in building 100
-Displaying 11th to 15th restaurants 
-![First Fifteen](/Images/.png "First Fifteen")
+
+
+#### Specifying the Restaurant ID 
+##### Displaying restaurant with the id number <i>40365414</i>
+![Resto ID](/Images/restoId.png "Resto ID")
