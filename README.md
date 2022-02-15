@@ -751,6 +751,8 @@ GET https://mood-me-backend.herokuapp.com/api?restaurant_id=40362274
 
 ![No Input](/Images/noInput.png "Sample No Input")
 
+##### First Ten results 
+
 ![First Ten](/Images/firstTen.png "First Ten Outputs")
 
 
@@ -773,6 +775,8 @@ GET https://mood-me-backend.herokuapp.com/api?restaurant_id=40362274
 
 ![Building Input](/Images/buildingInput.png "Building Input")
 
+##### Results of restaurants in building 100
+
 ![Building Output](/Images/buildingOutput.png "Building Output")
 
 
@@ -781,6 +785,8 @@ GET https://mood-me-backend.herokuapp.com/api?restaurant_id=40362274
 ##### Displaying restaurants in street <i>37 Road</i>
 
 ![Street Input](/Images/roadInput.png "Street Input")
+
+##### Results of restaurants in <i>37 Road</i>
 
 ![Street Output](/Images/roadOutput.png "Street Output")
 
