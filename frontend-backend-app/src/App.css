@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Gudea&family=Lato:wght@100&family=Limelight&family=Oswald:wght@200&display=swap');
+
 .MuiToolbar-root { 
     background-color: blueviolet;
 }
@@ -27,4 +29,45 @@
 
 .pagination-page { 
     margin-left: 30px;
+}
+
+/* .search-button { 
+    display: flex;
+} */
+
+.MuiButton-root.searchButton, .MuiButton-root.backButton { 
+    background-color: blueviolet;
+    color: white;
+    display: block;
+    width: 200px;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.MuiButton-root.searchButton:hover, .MuiButton-root.backButton:hover { 
+    background-color: blueviolet;
+    box-shadow: 0px 3px 15px blueviolet;
+    color: white;
+    display: block;
+    width: 200px;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.resto-info { 
+    margin-left: 30px;
+    font-family: 'Gudea', sans-serif;
+    color: #5089b8;
+}
+
+.resto-info b, .sub-info .date b { 
+    color: black;
+}
+
+.sub-info {
+    margin-left: 20px;
+}
+
+.sub-info .date { 
+    color: #b93633
 }

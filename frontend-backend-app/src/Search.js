@@ -24,6 +24,7 @@ function Search() {
     const [current, setCurrent] = useState(null);
     const [showData, setShowData] = useState(false);
     const [showCurrent, setShowCurrent] = useState(false);
+    const [count, setCount] = useState(0);
     const searchData = e => { 
         console.log("INSIDE SEARCH DATA");
         // e.preventDefault();
@@ -40,11 +41,17 @@ function Search() {
         axios.post('/getInfo', {"id": resto_id})
             .then(response => {
                 setCurrent(response.data);
+                setCount(0);
                 setShowData(false);
                 setShowCurrent(true);
             })
         console.log("in display resto");
         console.log(resto_id);
+    }
+
+    const getBack = e => { 
+        setShowCurrent(false);
+        setShowData(true);
     }
 
     const {
@@ -187,31 +194,53 @@ function Search() {
                         </div>
                     </Grid>
                     <Grid item> 
-                        <Button 
-                            variant="contained"
-                            onClick={ searchData } 
-                            > Search
-                        </Button>
+                        <div class="search-button">
+                            <Button 
+                                className='searchButton'
+                                // variant="contained"
+                                onClick={ searchData } 
+                                > Search
+                            </Button>
+                        </div>
                     </Grid>
-                    <div class="data-info"> 
+                </Form>
+                <br></br>
+                <hr></hr>
+                <div class="data-info"> 
+                        <br></br>
                         {
                             showData ? (<div className='results'>
                                 {data.map(resto => 
                                 <div>
-                                    <Button onClick={ displayResto(resto._id) }>{resto.restaurant_id} : {resto.name}</Button>
+                                    <Button 
+                                    color='secondary'
+                                    onClick={ displayResto(resto._id) }>{resto.restaurant_id} : {resto.name}</Button>
                                 </div>)}
                             </div>):null
                         } {
                             showCurrent ? (<div className='resto-info'>
-                                {current.name}
-                                {current.cuisine}
-                                {current.building}
+                                <h1>{current.name}</h1>
+                                <br></br>
+                                <div class="sub-info">
+                                    <p><b>restaurant_id: </b>{current.restaurant_id}</p>
+                                    <p><b>address: </b></p>
+                                    <p>&emsp;<b>building: </b>{current.address.building}</p>
+                                    <p>&emsp;<b>street: </b>{current.address.street}</p>
+                                    <p><b>cuisine: </b>{current.cuisine}</p>
+                                    <p><b>grades: </b></p>
+                                    {current.grades.map(grade => 
+                                        <React.Fragment key={grade._id}>
+                                            <p className="date">&emsp;<b>date: </b>{grade.date}</p>
+                                            <p>&emsp;<b>grade: </b>{grade.grade}</p>
+                                            <p>&emsp;<b>score: </b>{grade.score}</p>
+                                            <br></br>
+                                        </React.Fragment>
+                                    )}
+                                </div>
+                                <Button className='backButton' onClick={ getBack }>Back</Button>
                             </div>) : null
                         }
                     </div>
-                </Form>
-                <br></br>
-                <hr></hr>
             </div>
         </div>
     )
