@@ -51,7 +51,6 @@ app.get("/", (req, res) => {
 
 app.get("/api", (req, res) => {
     var filters = req.query;
-    // console.log(`filters date: ${filters["date"]}`);
 
     // SORT
     var sort = req.query.sort;
@@ -77,19 +76,13 @@ app.get("/api", (req, res) => {
         page = 1
     }
 
-    // filters.address = {}
-
     //BUILDING
     var building = req.query.building;
     if (building) { 
         var temp = {};
-        // temp.building = building; 
         filters["address.building"] = building;
         delete filters["building"];
     }
-
-    // console.log(JSON.stringify(filters));
-    // console.log(filters.address);
 
     //STREET
     var street = req.query.street;
@@ -97,7 +90,6 @@ app.get("/api", (req, res) => {
         filters["address.street"] = street;
         delete filters["street"];
     }
-    // console.log(`filters: ${filters}`);
 
     // DATE 
     var date = req.query.date;
@@ -114,7 +106,6 @@ app.get("/api", (req, res) => {
         filters["grades.grade"] = grade
         delete filters["grade"];
     }
-    // console.log(JSON.stringify(filters));
 
     // SCORE
     var score = req.query.score;
@@ -134,9 +125,6 @@ app.get("/api", (req, res) => {
 
 app.post("/search", (req, res) => { 
     var filters = req.body;
-    console.log("In filters");
-    console.log(filters);
-    // console.log(`filters date: ${filters["date"]}`);
 
     // SORT
     var sort = req.body.sort;
@@ -149,8 +137,7 @@ app.post("/search", (req, res) => {
     if (pagination) { 
         pagination = parseInt(req.body.pagination);
     } else { 
-        // TO CHANGE!!!!!!!!!!!!!
-        pagination = 4;
+        pagination = 10;
     }
     delete filters["pagination"];
 
@@ -163,19 +150,13 @@ app.post("/search", (req, res) => {
     }
     delete filters["page"]
 
-    // filters.address = {}
-
     //BUILDING
     var building = req.body.building;
     if (building) { 
-        var temp = {};
-        // temp.building = building; 
+        var temp = {}; 
         filters["address.building"] = building;
     }
     delete filters["building"];
-
-    // console.log(JSON.stringify(filters));
-    // console.log(filters.address);
 
     //STREET
     var street = req.body.street;
@@ -183,14 +164,12 @@ app.post("/search", (req, res) => {
         filters["address.street"] = street;
     }
     delete filters["street"];
-    // console.log(`filters: ${filters}`);
 
     // DATE 
     var date = req.body.date;
     if (date) { 
         date = new Date(date);
         filters["grades.date"] = date
-        // {$lte: date}
     }
     delete filters["date"];
 
@@ -200,7 +179,6 @@ app.post("/search", (req, res) => {
         filters["grades.grade"] = grade
     }
     delete filters["grade"];
-    // console.log(JSON.stringify(filters));
 
     // SCORE
     var score = req.body.score;
@@ -219,9 +197,6 @@ app.post("/search", (req, res) => {
         delete filters["id"];
     }
 
-    console.log("checking filters");
-    console.log(filters);
-
     Restaurants.find(filters, (err, data) => { 
         res.status(200).send(data)
     })
@@ -232,11 +207,7 @@ app.post("/search", (req, res) => {
 
 app.post("/getInfo", (req, res) => { 
     var getId = mongoose.Types.ObjectId(req.body);
-    console.log("getId");
-    console.log(req.body);
     Restaurants.findOne({_id: getId}, (err, data) => { 
-        console.log("in getInfo");
-        console.log(data);
         res.status(200).send(data);
     })
 })
