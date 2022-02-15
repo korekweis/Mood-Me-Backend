@@ -198,7 +198,11 @@ app.post("/search", (req, res) => {
     }
 
     Restaurants.find(filters, (err, data) => { 
-        res.status(200).send(data)
+        if (err) { 
+            res.status(500).send(err);
+        } else { 
+            res.status(200).send(data)
+        }
     })
     .skip((page-1) * pagination)
     .limit(pagination)

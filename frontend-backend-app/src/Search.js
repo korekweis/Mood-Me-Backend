@@ -25,6 +25,7 @@ function Search() {
     const [showData, setShowData] = useState(false);
     const [showCurrent, setShowCurrent] = useState(false);
     const [count, setCount] = useState(0);
+
     const searchData = e => { 
         console.log("INSIDE SEARCH DATA");
         // e.preventDefault();
@@ -36,6 +37,7 @@ function Search() {
                 console.log(response.data);
             })
     }
+
 
     const displayResto = (resto_id) => e => { 
         axios.post('/getInfo', {"id": resto_id})
