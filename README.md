@@ -47,56 +47,51 @@ Running backend:
 
 ## Restaurant Search API Information 
 
-#### Fetching all the data in the database 
-```http 
-GET http://localhost:8001/
-```
-
 #### Fetching all unique buildings
 ```http
-GET http://localhost:8001/buildings
+GET https://mood-me-backend.herokuapp.com/buildings
 ```
 
 #### Fetching all unique streets
 ```http
-GET http://localhost:8001/streets
+GET https://mood-me-backend.herokuapp.com/streets
 ```
 
 #### Fetching all unique dates for grades
 ```http
-GET http://localhost:8001/dates
+GET https://mood-me-backend.herokuapp.com/dates
 ```
 
 #### Fetching all unique grades
 ```http
-GET http://localhost:8001/grades
+GET https://mood-me-backend.herokuapp.com/grades
 ```
 
 #### Fetching all unique scores
 ```http
-GET http://localhost:8001/scores
+GET https://mood-me-backend.herokuapp.com/scores
 ```
 
 #### Fetching all unique restaurant cuisines
 ```http
-GET http://localhost:8001/cuisines
+GET https://mood-me-backend.herokuapp.com/cuisines
 ```
 
 #### Fetching all unique restaurant names
 ```http
-GET http://localhost:8001/names
+GET https://mood-me-backend.herokuapp.com/names
 ```
 
 #### Fetching all unique restaurant ids
 ```http
-GET http://localhost:8001/ids
+GET https://mood-me-backend.herokuapp.com/ids
 ```
 
 #### Number of Data to be displayed
 This holds the parameter of the number of data to be displayed
 ```http
-GET http://localhost:8001/api?pagination={pagination}
-GET http://localhost:8001/api?pagination=2
+GET https://mood-me-backend.herokuapp.com/api?pagination={pagination}
+GET https://mood-me-backend.herokuapp.com/api?pagination=2
 ```
 
 <details>
@@ -185,8 +180,8 @@ GET http://localhost:8001/api?pagination=2
 #### Page Number of Data
 This holds the page number. If the <i>pagination</i> is 3 and <i>page</i> is 3. This will display results 7 to 9. 
 ```http
-GET http://localhost:8001/api?page={page}
-GET http://localhost:8001/api?pagination=3&page=3
+GET https://mood-me-backend.herokuapp.com/api?page={page}
+GET https://mood-me-backend.herokuapp.com/api?pagination=3&page=3
 ```
 <details>
   <summary><i>Example Response</i></summary>
@@ -309,8 +304,8 @@ GET http://localhost:8001/api?pagination=3&page=3
 
 #### Fetching raw data by Building
 ```http
-GET http://localhost:8001/api?building={building}
-GET http://localhost:8001/api?building=1007
+GET https://mood-me-backend.herokuapp.com/api?building={building}
+GET https://mood-me-backend.herokuapp.com/api?building=1007
 ```
 <details>
   <summary><i>Example Response</i></summary>
@@ -366,8 +361,8 @@ GET http://localhost:8001/api?building=1007
 
 #### Fetching raw data by Street
 ```http
-GET http://localhost:8001/api?street={street}
-GET http://localhost:8001/api?street=11 Avenue
+GET https://mood-me-backend.herokuapp.com/api?street={street}
+GET https://mood-me-backend.herokuapp.com/api?street=11 Avenue
 ```
 <details>
   <summary><i>Example Response</i></summary>
@@ -418,8 +413,8 @@ GET http://localhost:8001/api?street=11 Avenue
 
 #### Fetching raw data by Cuisine
 ```http
-GET http://localhost:8001/api?cuisine={cuisine}
-GET http://localhost:8001/api?cuisine=Asian
+GET https://mood-me-backend.herokuapp.com/api?cuisine={cuisine}
+GET https://mood-me-backend.herokuapp.com/api?cuisine=Asian
 ```
 <details>
   <summary><i>Example Response</i></summary>
@@ -477,8 +472,8 @@ GET http://localhost:8001/api?cuisine=Asian
 #### Fetching raw data by Date
 Returns data that has a grade posted before or equal to `YYYY-MM-DD`
 ```http
-GET http://localhost:8001/api?date={date}
-GET http://localhost:8001/api?date=2015-01-05
+GET https://mood-me-backend.herokuapp.com/api?date={date}
+GET https://mood-me-backend.herokuapp.com/api?date=2015-01-05
 ```
 <details>
   <summary><i>Example Response</i></summary>
@@ -535,8 +530,8 @@ GET http://localhost:8001/api?date=2015-01-05
 #### Fetching raw data by Grade 
 Returns data that has a grade equal to `grade`
 ```http
-GET http://localhost:8001/api?grade={grade}
-GET http://localhost:8001/api?grade=C
+GET https://mood-me-backend.herokuapp.com/api?grade={grade}
+GET https://mood-me-backend.herokuapp.com/api?grade=C
 ```
 <details>
   <summary><i>Example Response</i></summary>
@@ -588,8 +583,8 @@ GET http://localhost:8001/api?grade=C
 #### Fetching raw data by Score
 Returns data that has a score equal to `score`
 ```http
-GET http://localhost:8001/api?score={score}
-GET http://localhost:8001/api?score=14
+GET https://mood-me-backend.herokuapp.com/api?score={score}
+GET https://mood-me-backend.herokuapp.com/api?score=14
 ```
 <details>
   <summary><i>Example Response</i></summary>
@@ -647,8 +642,8 @@ GET http://localhost:8001/api?score=14
 #### Fetching raw data by Name
 Returns data that has a name equal to `name`
 ```http
-GET http://localhost:8001/api?name={name}
-GET http://localhost:8001/api?name=Wendy'S
+GET https://mood-me-backend.herokuapp.com/api?name={name}
+GET https://mood-me-backend.herokuapp.com/api?name=Wendy'S
 ```
 <details>
   <summary><i>Example Response</i></summary>
@@ -699,8 +694,8 @@ GET http://localhost:8001/api?name=Wendy'S
 
 #### Fetching raw data searched by restaurant_id
 ```http
-GET http://localhost:8001/api?restaurant_id={restaurant_id}
-GET http://localhost:8001/api?restaurant_id=40362274
+GET https://mood-me-backend.herokuapp.com/api?restaurant_id={restaurant_id}
+GET https://mood-me-backend.herokuapp.com/api?restaurant_id=40362274
 ```
 <details>
   <summary><i>Example Response</i></summary>
@@ -749,27 +744,34 @@ GET http://localhost:8001/api?restaurant_id=40362274
 </details>
 <br>
 
+## FrontEnd Search Examples 
 
-<!-- #### SAMPLE
-```http
-GET http://localhost:8001/api?pagination={pagination}
-GET http://localhost:8001/api?pagination=2
-```
-<details>
-  <summary><i>Example Response</i></summary>
+#### No Input 
+When there are no inputs, and searched is clicked, first 10 data in the database will be displayed
+![No Input](/Images/noInput.png "Sample No Input")
+![First Ten](/Images/firstTen.png "First Ten Outputs")
+If an entry is clicked (Tov Kosher Kitchen), information about that entry is displayed
+![Tov Kosher](/Images/TovKosher.png "Tov Kosher Information")
 
-```JSON
-{
-  "data": {
-    "total": 89374,
-    "recoveries": 65064,
-    "deaths": 1983,
-    "active_cases": 22327,
-    "fatality_rate": "2.22",
-    "recovery_rate": "72.80"
-  }
-}
-```
+#### Specifying the number of data to be displayed 
+Displaying the first 15 restaurants in the database
+![11th to 15th](/Images/11to15.png "11th to 15th")
 
-</details>
-<br> -->
+#### Specifying the building name
+Displaying restaurants in building 100
+![Building Input](/Images/buildingInput.png "Building Input")
+![Building Output](/Images/buildingOutput.png "Building Output")
+
+#### Specifying the page number 
+Displaying 11th to 15th restaurants 
+![First Fifteen](/Images/.png "First Fifteen")#### Specifying the page number 
+Displaying 11th to 15th restaurants 
+![First Fifteen](/Images/.png "First Fifteen")#### Specifying the page number 
+Displaying 11th to 15th restaurants 
+![First Fifteen](/Images/.png "First Fifteen")#### Specifying the page number 
+Displaying 11th to 15th restaurants 
+![First Fifteen](/Images/.png "First Fifteen")#### Specifying the page number 
+Displaying 11th to 15th restaurants 
+![First Fifteen](/Images/.png "First Fifteen")#### Specifying the page number 
+Displaying 11th to 15th restaurants 
+![First Fifteen](/Images/.png "First Fifteen")
