@@ -14,7 +14,7 @@ const initialValues = {
     grade: '', 
     score: '', 
     name: '', 
-    restaurant_id: '', 
+    id: '', 
     pagination: '', 
     page: ''
 }
@@ -24,7 +24,6 @@ function Search() {
     const [current, setCurrent] = useState(null);
     const [showData, setShowData] = useState(false);
     const [showCurrent, setShowCurrent] = useState(false);
-    const [count, setCount] = useState(0);
 
     const searchData = e => { 
         console.log("INSIDE SEARCH DATA");
@@ -34,7 +33,7 @@ function Search() {
                 setData(response.data);
                 setShowCurrent(false);
                 setShowData(true);
-                console.log(response.data);
+                // console.log(response.data);
             })
     }
 
@@ -43,12 +42,11 @@ function Search() {
         axios.post('/getInfo', {"id": resto_id})
             .then(response => {
                 setCurrent(response.data);
-                setCount(0);
                 setShowData(false);
                 setShowCurrent(true);
             })
-        console.log("in display resto");
-        console.log(resto_id);
+        // console.log("in display resto");
+        // console.log(resto_id);
     }
 
     const getBack = e => { 
@@ -161,7 +159,7 @@ function Search() {
                             name="id"
                             color="secondary"
                             fullWidth
-                            value={ values.restaurant_id } 
+                            value={ values.id } 
                             onChange={ handleInputChange }
                         />
                     </Grid>

@@ -187,14 +187,18 @@ app.post("/search", (req, res) => {
     }
     delete filters["score"];
 
+    // RESTAURANT ID 
+    var id = req.body.id;
+    if (id) { 
+        filters["restaurant_id"] = id;
+    }
+    delete filters["id"];
+
     if (!filters["cuisine"]) { 
         delete filters["cuisine"];
     }
     if (!filters["name"]) { 
         delete filters["name"];
-    }
-    if (!filters["restaurant_id"]) { 
-        delete filters["restaurant_id"];
     }
 
     Restaurants.find(filters, (err, data) => { 
