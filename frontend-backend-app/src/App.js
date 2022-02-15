@@ -1,9 +1,12 @@
 import './App.css';
+import Header from './Header';
+import Search from './Search';
 
 function App() {
   return (
     <div className="App">
-      <h1> HELLO BACKEND PROJECT </h1>
+      <Header />
+      <Search />
     </div>
   );
 }

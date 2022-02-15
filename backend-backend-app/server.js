@@ -1,11 +1,16 @@
 import express from 'express'
 import mongoose from 'mongoose'
+import Cors from 'cors';
 import Restaurants from './models/dbRestaurants.js';
 
 //app config: 
 const app = express();
 const port = process.env.PORT || 8001;
 const connection_url = "mongodb+srv://korekweis:backendPassword@cluster0.ps4rg.mongodb.net/MoodMeDatabase?retryWrites=true&w=majority"
+
+//Middleware 
+app.use(express.json());
+app.use(Cors());
 
 //DBConfig 
 mongoose.connect(connection_url, {
@@ -126,6 +131,115 @@ app.get("/api", (req, res) => {
     .limit(pagination)
     .sort(sort)
 });
+
+app.post("/search", (req, res) => { 
+    var filters = req.body;
+    console.log("In filters");
+    console.log(filters);
+    // console.log(`filters date: ${filters["date"]}`);
+
+    // SORT
+    var sort = req.body.sort;
+    if (sort) { 
+        delete filters["sort"];
+    }
+
+    // PAGINATION 
+    var pagination = req.body.pagination;
+    if (pagination) { 
+        pagination = parseInt(req.body.pagination);
+    } else { 
+        // TO CHANGE!!!!!!!!!!!!!
+        pagination = 4;
+    }
+    delete filters["pagination"];
+
+    // PAGE
+    var page = req.body.page; 
+    if (page) { 
+        page = parseInt(req.body.page);
+    } else { 
+        page = 1
+    }
+    delete filters["page"]
+
+    // filters.address = {}
+
+    //BUILDING
+    var building = req.body.building;
+    if (building) { 
+        var temp = {};
+        // temp.building = building; 
+        filters["address.building"] = building;
+    }
+    delete filters["building"];
+
+    // console.log(JSON.stringify(filters));
+    // console.log(filters.address);
+
+    //STREET
+    var street = req.body.street;
+    if (street) { 
+        filters["address.street"] = street;
+    }
+    delete filters["street"];
+    // console.log(`filters: ${filters}`);
+
+    // DATE 
+    var date = req.body.date;
+    if (date) { 
+        date = new Date(date);
+        filters["grades.date"] = date
+        // {$lte: date}
+    }
+    delete filters["date"];
+
+    //GRADE
+    var grade = req.body.grade;
+    if (grade) { 
+        filters["grades.grade"] = grade
+    }
+    delete filters["grade"];
+    // console.log(JSON.stringify(filters));
+
+    // SCORE
+    var score = req.body.score;
+    if (score) { 
+        filters["grades.score"] = parseInt(score);
+    }
+    delete filters["score"];
+
+    if (!filters["cuisine"]) { 
+        delete filters["cuisine"];
+    }
+    if (!filters["name"]) { 
+        delete filters["name"];
+    }
+    if (!filters["id"]) { 
+        delete filters["id"];
+    }
+
+    console.log("checking filters");
+    console.log(filters);
+
+    Restaurants.find(filters, (err, data) => { 
+        res.status(200).send(data)
+    })
+    .skip((page-1) * pagination)
+    .limit(pagination)
+    .sort(sort)
+})
+
+app.post("/getInfo", (req, res) => { 
+    var getId = mongoose.Types.ObjectId(req.body);
+    console.log("getId");
+    console.log(req.body);
+    Restaurants.findOne({_id: getId}, (err, data) => { 
+        console.log("in getInfo");
+        console.log(data);
+        res.status(200).send(data);
+    })
+})
 
 app.get("/buildings", (req, res) => { 
     Restaurants.distinct("address.building", (err, data) => { 

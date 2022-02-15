@@ -17,8 +17,30 @@ Version control:
 Install mongoose: 
 `npm i express mongoose`
 
-install nodemon: 
+Install nodemon: 
 `sudo npm i -g nodemon`
+
+Install react-router-dom:
+`npm install react-router-dom`
+
+Install material-ui
+`npm install @mui/material @emotion/react @emotion/styled`
+
+`npm install @material-ui/core`
+
+`npm install @material/menu`
+
+`npm install @mui/icons-material`
+
+`npm install @mui/lab`
+
+`npm install date-fns --save`
+
+Install axios: 
+`npm install axios`
+
+Install cors: 
+`npm install cors`
 
 Running backend:
 `npx nodemon runserver` 
