@@ -14,7 +14,7 @@ const initialValues = {
     grade: '', 
     score: '', 
     name: '', 
-    id: '', 
+    restaurant_id: '', 
     pagination: '', 
     page: ''
 }
@@ -161,7 +161,7 @@ function Search() {
                             name="id"
                             color="secondary"
                             fullWidth
-                            value={ values.id } 
+                            value={ values.restaurant_id } 
                             onChange={ handleInputChange }
                         />
                     </Grid>

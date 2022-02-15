@@ -753,14 +753,20 @@ GET https://mood-me-backend.herokuapp.com/api?restaurant_id=40362274
 
 ![First Ten](/Images/firstTen.png "First Ten Outputs")
 
+
+
 ##### If an entry is clicked (Tov Kosher Kitchen), information about that entry is displayed
 
 ![Tov Kosher](/Images/TovKosher.png "Tov Kosher Information")
+
+
 
 #### Specifying the number of data to be displayed 
 ##### Displaying the first 15 restaurants in the database
 
 ![11th to 15th](/Images/11to15.png "11th to 15th")
+
+
 
 #### Specifying the building name
 ##### Displaying restaurants in building 100
@@ -769,31 +775,50 @@ GET https://mood-me-backend.herokuapp.com/api?restaurant_id=40362274
 
 ![Building Output](/Images/buildingOutput.png "Building Output")
 
+
+
 #### Specifying the street name
 ##### Displaying restaurants in street <i>37 Road</i>
+
 ![Street Input](/Images/roadInput.png "Street Input")
-<br></br>
+
 ![Street Output](/Images/roadOutput.png "Street Output")
 
-#### Specifying the building name
-##### Displaying restaurants in building 100
-Displaying 11th to 15th restaurants 
-![First Fifteen](/Images/.png "First Fifteen")#### Specifying the page number 
 
-#### Specifying the building name
-##### Displaying restaurants in building 100
-Displaying 11th to 15th restaurants 
-![First Fifteen](/Images/.png "First Fifteen")#### Specifying the page number 
 
-#### Specifying the building name
-##### Displaying restaurants in building 100
-Displaying 11th to 15th restaurants 
-![First Fifteen](/Images/.png "First Fifteen")#### Specifying the page number 
+#### Specifying the cuisine
+##### Displaying restaurants belonging to the <i>Vegetarian</i> cuisne
 
-#### Specifying the building name
-##### Displaying restaurants in building 100
-Displaying 11th to 15th restaurants 
-![First Fifteen](/Images/.png "First Fifteen")#### Specifying the page number 
+![Cuisine Input](/Images/cuisineInput.png "Cuisine Input")
+
+![Cuisine Output](/Images/cuisineOutput.png "Cuisine Output")
+
+
+
+#### Specifying the Date
+##### Displaying restaurants having grades posted on <i>January 2, 2015</i>
+
+![Date Input](/Images/dateInput.png "Date Input")
+
+![Date Output](/Images/dateOutput.png "Date Output")
+
+
+
+#### Specifying the Grade
+##### Displaying restaurants having a grade equal to <i>A</i>
+![Grade](/Images/grade.png "Grade")
+
+
+
+#### Specifying the Score
+##### Displaying restaurants having a score equal to <i>15</i>
+![Score](/Images/score.png "Score")
+
+
+
+#### Specifying the Restaurant Name
+##### Displaying restaurants with the name <i>Hong Kong Kitchen</i>
+![Name](/Images/name.png "Name")
 
 #### Specifying the building name
 ##### Displaying restaurants in building 100

@@ -193,8 +193,8 @@ app.post("/search", (req, res) => {
     if (!filters["name"]) { 
         delete filters["name"];
     }
-    if (!filters["id"]) { 
-        delete filters["id"];
+    if (!filters["restaurant_id"]) { 
+        delete filters["restaurant_id"];
     }
 
     Restaurants.find(filters, (err, data) => { 
