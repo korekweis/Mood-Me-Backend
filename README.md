@@ -793,9 +793,11 @@ GET https://mood-me-backend.herokuapp.com/api?restaurant_id=40362274
 
 
 #### Specifying the cuisine
-##### Displaying restaurants belonging to the <i>Vegetarian</i> cuisne
+##### Displaying restaurants belonging to the <i>Vegetarian</i> cuisine
 
 ![Cuisine Input](/Images/cuisineInput.png "Cuisine Input")
+
+##### Results of restaurants that are <i>Vegetarian</i> 
 
 ![Cuisine Output](/Images/cuisineOutput.png "Cuisine Output")
 
@@ -805,6 +807,8 @@ GET https://mood-me-backend.herokuapp.com/api?restaurant_id=40362274
 ##### Displaying restaurants having grades posted on <i>January 2, 2015</i>
 
 ![Date Input](/Images/dateInput.png "Date Input")
+
+##### Results of restaurants having grades posted on <i>January 2, 2015</i>
 
 ![Date Output](/Images/dateOutput.png "Date Output")
 
